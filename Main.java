@@ -1,3 +1,8 @@
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+
 public class Main {
     private enum ChatbotState {
         HELP, ERROR, MAINMENU, MUSICPLAYER, QUIT
@@ -32,6 +37,22 @@ public class Main {
                 break;
         }
     }
+
+    public static synchronized void playSound(final String url) {
+        new Thread(new Runnable() {
+      public void run() {
+        try {
+          Clip clip = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(Main.class.getResourceAsStream(url));
+          clip.open(inputStream);
+          clip.start(); 
+        } catch (Exception e) {
+          System.err.println(e.getMessage());
+        }
+      }
+    }).start();
+      }
+
 
     static void getResponse() { // take user input
         
