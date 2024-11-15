@@ -1,3 +1,13 @@
 public class Enclosure {
-    public Enclosure(String animal)
+    private Animal[] animals;
+    private int animalCount;
+    private double temperature;
+
+    public Enclosure(Animal[] myArr, double temp) {
+        this.animals = myArr;
+        this.animalCount = animals.length;
+        this.temperature = temp;
+    }
+
+
 }
