@@ -2,6 +2,7 @@ public class Animal {
     private Species species;
     private String name;
     private int age;
+
     public Animal(Species species, String name, int age) {
         this.species = species;
         this.name = name;
@@ -11,9 +12,7 @@ public class Animal {
     public Species getSpecies() {
         return species;
     }
-    public String getGenus() {
-        return species.getGenus();
-    }
+
     public String getName() {
         return name;
     }
