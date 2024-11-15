@@ -1,3 +1,8 @@
 public class Enclosure {
-    public Enclosure(String animal)
+    private Animal[] animals;
+    private int animalCount;
+
+    public Enclosure(Animal[] animals)
+        this.animals = animals;
+        
 }
