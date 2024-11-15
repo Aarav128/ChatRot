@@ -4,15 +4,18 @@ public class Species {
     public static final Species Dog = new Species("Dog", "I like dogs");
     public static final Species Hawk = new Species("Hawk", "In Native American cultures, hawks are revered for their keen sense of sight and ability to fly at great heights.");
 
-    String genus;
-    String funFact;
+    private String genus;
+    private String funFact;
+
     public Species(String genus, String fact) {
         this.genus = genus;
-        funFact = fact;
+        this.funFact = fact;
     }
+
     public String getGenus() {
         return genus;
     }
+    
     public String getFunFact() {
         return funFact;
     }
