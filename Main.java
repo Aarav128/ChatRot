@@ -24,8 +24,8 @@ public class Main {
       state = 1;
     }
     else if (state == 1) {
-      if (input.toLowerCase().contains("lion")) {
-        System.out.println("Choose one of our lions to look at: ");
+      if (input.toLowerCase().contains("enclosure a")) {
+        System.out.println("Choose one of our animals to look at: ");
         state = 4;
       }
       else {
