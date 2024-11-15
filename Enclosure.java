@@ -4,30 +4,30 @@ public class Enclosure {
     private String biome;
     private double temperature;
 
-    public Enclosure(Animal[] myArr, String myStr, double myDbl) {
-        this.animals = myArr;
+    public Enclosure(Animal[] animals, String biome, double temperature) {
+        this.animals = animals;
         this.total = animals.length;
-        this.biome = myStr;
-        this.temperature = myDbl;
+        this.biome = biome;
+        this.temperature = temperature;
     }
 
-    public static Animal getAnimal(int i) {
+    public  Animal getAnimal(int i) {
         return animals[i];
     }
 
-    public static String getBiome() {
+    public String getBiome() {
         return biome;
     }
 
-    public static double getTemp() {
+    public double getTemp() {
         return temperature;
     }
 
-    public static int getTotal() {
+    public int getTotal() {
         return total;
     }
 
-    public static int countSpecies(Species x) {
+    public int countSpecies(Species x) {
         int count = 0;
         for (Animal i : animals) {
             if (i.getSpecies() == x) {
