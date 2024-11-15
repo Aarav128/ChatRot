@@ -19,6 +19,7 @@ public class Animal {
     public int getAge() {
         return age;
     }
+    
     public void birthday() {
         age++;
         System.out.println(name + " turned " + age + " years old!");
