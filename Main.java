@@ -25,11 +25,11 @@ public class Main {
     }
     else if (state == 1) {
       if (input.toLowerCase().contains("lion")) {
-        System.out.println("Choose a specific type of lions: ");
+        System.out.println("Choose one of our lions to look at: ");
         state = 4;
       }
       else {
-        System.out.println("Please give me an animal.");
+        System.out.println("Please give me a species.");
       }
     }
   }
