@@ -7,4 +7,22 @@ public class Animal {
         this.name = name;
         this.age = age;
     }
+
+    public Species getSpecies() {
+        return species;
+    }
+    public String getGenus() {
+        return species.getGenus();
+    }
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void birthday() {
+        age++;
+        System.out.println(name + " turned " + age + " years old!");
+    }
+
 }
