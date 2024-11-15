@@ -3,7 +3,7 @@ public class Enclosure {
     private int animalCount;
     private double temperature;
 
-    public Enclosure(Animal[] myArr, double temp) {}
+    public Enclosure(Animal[] myArr, double temp) {
         this.animals = myArr;
         this.animalCount = animals.length;
         this.temperature = temp;
