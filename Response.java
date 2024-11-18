@@ -4,10 +4,10 @@ public class Response {
 
     public Response(String user) {
         this.user = user;
-        System.out.println("Hello " + user + "! Nice to meet you!")
+        System.out.println("Hello " + user + "! Nice to meet you!");
     }
 
-    public static String reply(String input) {
+    public String reply(String input) {
         
         return output;
     }

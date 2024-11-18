@@ -11,23 +11,23 @@ public class Enclosure {
         this.temperature = myDbl;
     }
 
-    public static Animal getAnimal(int i) {
+    public Animal getAnimal(int i) {
         return animals[i];
     }
 
-    public static String getBiome() {
+    public String getBiome() {
         return biome;
     }
 
-    public static double getTemp() {
+    public double getTemp() {
         return temperature;
     }
 
-    public static int getTotal() {
+    public int getTotal() {
         return total;
     }
 
-    public static int countSpecies(Species x) {
+    public int countSpecies(Species x) {
         int count = 0;
         for (Animal i : animals) {
             if (i.getSpecies() == x) {
