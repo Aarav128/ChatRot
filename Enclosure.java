@@ -4,11 +4,11 @@ public class Enclosure {
     private String biome;
     private double temperature;
 
-    public Enclosure(Animal[] myArr, String myStr, double myDbl) {
-        this.animals = myArr;
+    public Enclosure(Animal[] animals, String biome, double temperature) {
+        this.animals = animals;
         this.total = animals.length;
-        this.biome = myStr;
-        this.temperature = myDbl;
+        this.biome = biome;
+        this.temperature = temperature;
     }
 
     public Animal getAnimal(int i) {
