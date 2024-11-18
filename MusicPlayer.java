@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 
 public class MusicPlayer {
     public static void main(String[] args) {
-      playSound("test.wav");
-      JOptionPane.showMessageDialog(null, "press ok to stop playing");
+      playSound("bird_caw2.wav");
+      // JOptionPane.showMessageDialog(null, "press ok to stop playing");
     }
 
     public static void playSound(String url) {
@@ -19,6 +19,8 @@ public class MusicPlayer {
           Clip clip = AudioSystem.getClip();
           clip.open(audioInput);
           clip.start();
+          JOptionPane.showMessageDialog(null, "press ok to stop playing");
+          clip.stop();
         } else {
           System.out.println("oof");
         }
