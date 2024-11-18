@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
   static int state = 0;
+  static String[] confused = {"I don't know what you mean", "What did you say?", "Please enter a valid response", "I don't know how to respond to that..."};
 
   public static void main(String[] args) {
     System.out.println("Welcome to the zoo!");
