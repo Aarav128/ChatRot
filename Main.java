@@ -45,7 +45,7 @@ public class Main {
     else if (state == 3) {
       if (input.toLowerCase().equals("yes")) {
         System.out.print("Which animal would you like to choose (1-" + (enclosureA.getTotal()) + ")? ");
-        state = 3;
+        state = 2;
       }
       else if (input.toLowerCase().equals("no")) {
         System.out.print("Would you like to look at another enclosure? ");
