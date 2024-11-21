@@ -1,42 +1,22 @@
-import java.util.Scanner;
+public class Species {
+    public static final Species Lion = new Species("Lion", "Lions are the only cats that live in groups");
+    public static final Species Tiger = new Species("Tiger", "Tigers are the largest species of cat! They are also carnivores, meaning they only eat meat.");
+    public static final Species Dog = new Species("Dog", "I like dogs");
+    public static final Species Hawk = new Species("Hawk", "In Native American cultures, hawks are revered for their keen sense of sight and ability to fly at great heights.");
 
-public class Main {
-  static int state = 0;
-  static String[] confused = {"I don't know what you mean. ", "What did you say? ", "Please enter a valid response: ", "I don't know how to respond to that..."};
-  static Enclosure enclosureA = new Enclosure(new Animal[] {
-    new Animal(Species.Lion, "Bob", 5), 
-    new Animal(Species.Tiger, "Michael", 8)}, "Savanna", 75);
-  static String name;
+    private String genus;
+    private String funFact;
 
-  public static void main(String[] args) {
-    System.out.println("Welcome to the zoo!");
-    System.out.print("What is your name? ");
-    Scanner scanner = new Scanner(System.in);
-    name = scanner.nextLine();
+    public Species(String genus, String fact) {
+        this.genus = genus;
+        this.funFact = fact;
+    }
 
-    while (true) {
-      String input = scanner.nextLine();
-      getResponse(input);
+    public String getGenus() {
+        return genus;
     }
-  }
-
-  public static void getResponse(String input) {
-    if (state == 0) {
-      System.out.print(name + ", We have a lot to explore! Choose one: ");
-      state = 1;
+    
+    public String getFunFact() {
+        return funFact;
     }
-    else if (state == 1) {
-      if (input.toLowerCase().contains("enclosure a")) {
-        System.out.print("Choose one of our animals to look at: ");
-        state = 4;
-      }
-      else {
-        System.out.print("Please give me a valid enclosure. ");
-      }
-    }
-    else if (state == 4) {
-      Animal animal = enclosureA.getAnimal(Integer.parseInt(input));
-      System.out.print("Excellent choice! " + animal.getName() + " is a " + animal.getSpecies() + " and is " + animal.getAge() + " years old. Fun fact! " + animal.getSpecies().getFunFact());
-    }
-  }
 }
