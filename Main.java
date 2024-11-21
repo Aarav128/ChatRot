@@ -2,14 +2,18 @@ import java.util.Scanner;
 
 public class Main {
   static int state = 0;
-  static String[] confused = {"I don't know what you mean. ", "What did you say? ", "Please enter a valid response: ", "I don't know how to respond to that..."};
+  static String[] confused = {"I don't know what you mean. ", "What did you say? ", "Please enter a valid response.", "I don't know how to respond to that...", "Answer the question I asked you."};
   static Enclosure savanna = new Enclosure(new Animal[] {
     new Animal(Species.Lion, "Bob", 5), 
     new Animal(Species.Tiger, "Michael", 8),
     new Animal(Species.Lion, "Rizzy", 3)
   }, "Savanna", 75);
-  static Enclosure woods = new Enclosure(new Animal[] {}, "Woods", 30);
-  static Enclosure coastal = new Enclosure(new Animal[] {}, "Coastal", 55);
+  static Enclosure woods = new Enclosure(new Animal[
+
+  ] {}, "Woods", 30);
+  static Enclosure coastal = new Enclosure(new Animal[
+
+  ] {}, "Coastal", 55);
   static Enclosure current;
   static String name;
 
@@ -47,24 +51,24 @@ public class Main {
         state = 2;
       }
       else {
-        System.out.print("Please give me a valid enclosure: ");
+        randomResponse();
       }
     }
     else if (state == 2) {
       try {
         int index = Integer.parseInt(input);
         index --;
-      } catch (NumberFormatException e) {
-        System.out.print("Please enter a valid integer. ");
-      }
-      if (index > 0 && index < current.getTotal()) {
-          Animal animal = current.getAnimal(index - 1);
+        if (index >= 0 && index < current.getTotal()) {
+          Animal animal = current.getAnimal(index);
           System.out.println("Excellent choice! " + animal.getName() + " is a " + animal.getSpecies().getGenus() + " and is " + animal.getAge() + " years old. Fun fact! " + animal.getSpecies().getFunFact());
           System.out.print("You can choose another animal or leave. Do you want to choose another animal (yes/no)? ");
           state = 3;
       }
       else {
         System.out.println("Please enter an integer in the range specified above: ");
+      }
+      } catch (NumberFormatException e) {
+        System.out.print("Please enter a valid integer. ");
       }
 
     }
@@ -78,7 +82,7 @@ public class Main {
         state = 4;
       }
       else {
-        System.out.print("It's a yes or no question, blud. ");
+        randomResponse();
       }
     }
     else if (state == 4) {
@@ -91,9 +95,13 @@ public class Main {
         return false;
       }
       else {
-        System.out.print("It's a yes or no question, blud. ");
+        randomResponse();
       }
     }
     return true;
+  }
+  public static void randomResponse() {
+    String r = confused[(int)(Math.random() * confused.length)];
+    System.out.println(r);
   }
 }
