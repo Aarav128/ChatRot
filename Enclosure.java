@@ -36,4 +36,11 @@ public class Enclosure {
         }
         return count;
     }
+    public String[] animalNames() {
+        String[] names = new String[animals.length];
+        for(int i = 0; i < animals.length; i++) {
+            names[i] = animals[i].getName();
+        }
+        return names;
+    }
 }
