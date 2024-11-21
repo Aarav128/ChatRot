@@ -4,12 +4,16 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
 import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class MusicPlayer {
     Clip clip;
     public static void main(String[] args) {
       new MusicPlayer().playSound("bird_caw2.wav");
-      // JOptionPane.showMessageDialog(null, "press ok to stop playing");
+      Scanner scanner = new Scanner(System.in);
+      scanner.nextLine();
+      new MusicPlayer().playSound("test.wav");
+      scanner.nextLine();
     }
 
     public void stopSound() {
