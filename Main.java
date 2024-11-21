@@ -8,14 +8,17 @@ public class Main {
     new Animal(Species.Tiger, "Michael", 8),
     new Animal(Species.Lion, "Rizzy", 3)
   }, "Savanna", 75);
-  static Enclosure woods = new Enclosure(new Animal[
+  static Enclosure woods = new Enclosure(new Animal[] {
 
-  ] {}, "Woods", 30);
-  static Enclosure coastal = new Enclosure(new Animal[
 
-  ] {}, "Coastal", 55);
+  }, "Woods", 30);
+  static Enclosure coastal = new Enclosure(new Animal[] {
+
+
+  }, "Coastal", 55);
   static Enclosure current;
   static String name;
+  static Animal animal;
 
   public static void main(String[] args) {
     System.out.println("Welcome to the zoo!");
@@ -59,14 +62,12 @@ public class Main {
         int index = Integer.parseInt(input);
         index --;
         if (index >= 0 && index < current.getTotal()) {
-          Animal animal = current.getAnimal(index);
-          System.out.println("Excellent choice! " + animal.getName() + " is a " + animal.getSpecies().getGenus() + " and is " + animal.getAge() + " years old. Fun fact! " + animal.getSpecies().getFunFact());
-          System.out.print("You can choose another animal or leave. Do you want to choose another animal (yes/no)? ");
-          state = 3;
-      }
-      else {
-        System.out.println("Please enter an integer in the range specified above: ");
-      }
+          animal = current.getAnimal(index);
+          state = 5;
+        }
+        else {
+          System.out.println("Please enter an integer in the range specified above: ");
+        }
       } catch (NumberFormatException e) {
         System.out.print("Please enter a valid integer. ");
       }
@@ -98,8 +99,35 @@ public class Main {
         randomResponse();
       }
     }
+    else if (state == 5) {
+      System.out.println("Excellent choice! " + animal.getName() + " is the animal you chose.");
+      System.out.print("I can tell you their age, their species, and even a fun fact! You can say 'exit' to opt out of expanding your intellectual horizons. What do you want to know about " + animal.getName() + "?");
+      state = 6;
+    }
+    else if (state == 6) {
+      if (input.toLowerCase().contains("age")) {
+        System.out.println(animal.getName() + " is " + animal.getAge() + "years old.");
+      }
+      else if (input.toLowerCase().contains("species")) {
+        System.out.println(animal.getName() + " is a " + animal.getSpecies().getGenus() + ".");
+      }
+      else if (input.toLowerCase().contains("fun fact")) {
+        System.out.println("Did you know that " + animal.getSpecies() + "s " + animal.getSpecies().getFunFact() + "? Personally, my socks are blown off! ");
+      }
+      else if (input.toLowerCase().contains("exit")) {
+        System.out.println("Let's stop talking about " + animal.getName() + ".");
+        System.out.println("Would you like to look at another animal? (yes/no)");
+        state = 3;
+      }
+      else {
+        randomResponse();
+      }
+      System.out.println("Ask me another question, or opt out with 'exit': ");
+
+    }
     return true;
   }
+
   public static void randomResponse() {
     String r = confused[(int)(Math.random() * confused.length)];
     System.out.println(r);
