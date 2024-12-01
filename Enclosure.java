@@ -26,6 +26,9 @@ public class Enclosure {
     public int getTotal() {
         return total;
     }
+    public Animal[] getAnimals() {
+        return animals;
+    }
 
     public int countSpecies(Species x) {
         int count = 0;

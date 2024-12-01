@@ -9,7 +9,7 @@ public class Species {
     public static final Species Owl = new Species("Owl", "Owls make regurgitated balls of undigested parts of its pray, such as bones, teeth, and fur, called pellets, which are frequently disected in science classes.");
     public static final Species Crab = new Species("Crab", "Crabs are decapods, meaning they have 10 legs.");
     public static final Species Seal = new Species("Seal", "Seals can dive to great depths underwater and stay there for up to two hours.");
-    public static final Species SeaTurtle = new Species("Sea Turtle", "Only 1 in 1,000 Turtles Will Make it to Adulthood.");
+    public static final Species SeaTurtle = new Species("Sea Turtle", "Only 1 in 1,000 Turtles eill mskr it to Adulthood, but those who do will live for a long long time!");
     public static final Species Pelican = new Species("Pelican", "There are more than half a dozen species of pelicans, but all of them have the famous throat pouch for which the birds are best known.");
     public static final Species Fish = new Species("Fish", "There are over 27,000 identified species of fish, and an estimated 15,000 more that have not yet been identified.");
     private String genus;
