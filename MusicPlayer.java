@@ -1,21 +1,14 @@
-import javax.print.attribute.standard.JobHoldUntil;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
-import javax.swing.JOptionPane;
 import java.util.Scanner;
 
 public class MusicPlayer {
     Clip clip;
-    public static void main(String[] args) {
-      new MusicPlayer().playSound("bird_caw2.wav");
-      Scanner scanner = new Scanner(System.in);
-      scanner.nextLine();
-      new MusicPlayer().playSound("test.wav");
-      scanner.nextLine();
+    public MusicPlayer() {
+      System.out.println("We even have music!");
     }
-
     public void stopSound() {
       clip.stop();
     }

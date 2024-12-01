@@ -27,8 +27,10 @@ public class Main {
   static Enclosure current;
   static String name;
   static String question;
+  static MusicPlayer musicPlayer;
   public static void main(String[] args) {
     System.out.println("Welcome to the zoo! You can write 'quit' at anytime to leave.");
+    musicPlayer = new MusicPlayer();
     System.out.print("What is your name? ");
     Scanner scanner = new Scanner(System.in);
     name = scanner.nextLine();
@@ -42,7 +44,7 @@ public class Main {
 
   public static boolean getResponse(String input) {
     if(input.toLowerCase().contains("quit")) {
-      System.out.println("Byebye! You can come back to ask any more questions at any time!");
+      System.out.println("Byebye! You can come back to ask any more questions at any time if you wish to broaden your intellectual horizons!");
       return false;
     }
     if (state == 0) {
@@ -52,6 +54,7 @@ public class Main {
     }
     else if (state == 1) {
       if (input.toLowerCase().contains("savanna")) {
+        musicPlayer.playSound("lion.wav");
         System.out.println("This feels good! It is a crisp " + savanna.getTemp() + " degrees here.");
         System.out.println("Welcome to the savanna! This mix of a forest and desert actually occurs nearly everywhere worldwide, but most famously in Africa!\nWe have " 
         + (savanna.getTotal()) + " animals in our savanna enclosure. Here they are: ");
@@ -60,6 +63,7 @@ public class Main {
         state = 2;
       }
       else if (input.toLowerCase().contains("woods")) {
+        musicPlayer.playSound("howl.wav");
         System.out.println("Brrr.... its cold here. Just " + woods.getTemp() + " degrees farenheit.");
         System.out.println("Worldwide there are many types of woods, including tropical forests, boreal forests, and temperate forests. \nThis one is a taiga forest, characterized by cold weather.\nWe have " 
         + (savanna.getTotal()) + " animals in our woods enclosure. Here they are: ");
@@ -68,6 +72,7 @@ public class Main {
         state = 2;
       }
       else if (input.toLowerCase().contains("coastal")) {
+        musicPlayer.playSound("ocean.wav");
         System.out.println("Little windy here, but not too cold at " + coastal.getTemp() + " degrees.");
         System.out.println("Our cool, oceanside coastal enclosure has both a saltwater area and a sandy beach, with birds, crabs, and sea creatures!\nWe have " 
         + (savanna.getTotal()) + " animals in our coastal enclosure. Here they are: ");
