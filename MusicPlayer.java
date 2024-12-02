@@ -2,7 +2,6 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
-import java.util.Scanner;
 
 public class MusicPlayer {
     Clip clip;
@@ -15,17 +14,17 @@ public class MusicPlayer {
 
     public void playSound(String url) {
       try {
-        File musicPath = new File(url);
-        if(musicPath.exists()) {
-          AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
-          clip = AudioSystem.getClip();
-          clip.open(audioInput);
-          clip.start();
-        } else {
-          System.out.println("oof");
-        }
-      } catch (Exception e){
-        System.out.println(e);
+      File musicPath = new File(url);
+      if(musicPath.exists()) {
+        AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+        clip = AudioSystem.getClip();
+        clip.open(audioInput);
+        clip.start();
+      } else {
+        System.out.println("oof");
       }
+    } catch (Exception e){
+      System.out.println(e);
     }
+  }
 }

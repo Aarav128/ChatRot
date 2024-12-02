@@ -139,7 +139,7 @@ public class Main {
   public static void outputAnimalsList(Enclosure enclosure) {
     for (int i = 0; i < enclosure.getTotal(); i++) {
       Animal a = enclosure.getAnimal(i);
-      System.out.println(i+1 + ": " + a.getName() + " is a " + a.getAge() + " year old " + a.getSpecies().getGenus());
+      System.out.println(i+1 + ": " + a.getName() + " is a " + a.getSpecies().getGenus());
     }
     askQuestion("Enter the number for the animal you'd like to learn more about!");
   }
